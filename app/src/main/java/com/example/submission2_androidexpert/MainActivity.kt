@@ -5,6 +5,9 @@ import android.content.res.TypedArray
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.AdapterView
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,56 +36,21 @@ class MainActivity : AppCompatActivity() {
         view_pager.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager)
         tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(applicationContext, R.color.colorPrimaryDark))
-
-        /*adapter = MovieAdapter(this)
-        lv_list.adapter = adapter
-
-        prepare()
-        addItem()
-
-        lv_list.onItemClickListener = AdapterView.OnItemClickListener{_, _, pos, _ ->
-            val parcelableMovie = Movie(
-                listOfMOvies[pos].poster,
-                listOfMOvies[pos].title,
-                listOfMOvies[pos].director,
-                listOfMOvies[pos].overview,
-                listOfMOvies[pos].userScore,
-                listOfMOvies[pos].releaseYear,
-                listOfMOvies[pos].runtime,
-                listOfMOvies[pos].genre
-            )
-
-            val intentToDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
-            intentToDetailActivity.putExtra(DetailActivity.EXTRA_MOVIE, parcelableMovie)
-            startActivity(intentToDetailActivity)
-        }*/
     }
 
-    /*private fun prepare() {
-        dataPoster = resources.obtainTypedArray(R.array.data_poster)
-        dataTitle = resources.getStringArray(R.array.data_title)
-        dataDirector = resources.getStringArray(R.array.data_director)
-        dataOverview = resources.getStringArray(R.array.data_overview)
-        dataUserScore = resources.getStringArray(R.array.data_user_score)
-        dataReleaseYear = resources.getStringArray(R.array.data_release_year)
-        dataRuntime = resources.getStringArray(R.array.data_runtime)
-        dataGenre = resources.getStringArray(R.array.data_genres)
-    }*/
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.lang_setting_menu, menu)
+        return true
+    }
 
-    /*private fun addItem() {
-        for (pos in dataTitle.indices) {
-            val movie = Movie(
-                dataPoster.getResourceId(pos, -1),
-                dataTitle[pos],
-                dataDirector[pos],
-                dataOverview[pos],
-                dataUserScore[pos],
-                dataReleaseYear[pos],
-                dataRuntime[pos],
-                dataGenre[pos]
-            )
-            listOfMOvies.add(movie)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.lang_setting -> {
+                //
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
-        adapter.listOfMovies = listOfMOvies
-    }*/
+    }
 }
