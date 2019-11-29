@@ -1,29 +1,15 @@
 package com.example.submission2_androidexpert
 
 import android.content.Intent
-import android.content.res.TypedArray
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.AdapterView
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    /*private lateinit var adapter: MovieAdapter
-    private lateinit var dataPoster: TypedArray
-    private lateinit var dataTitle: Array<String>
-    private lateinit var dataDirector: Array<String>
-    private lateinit var dataOverview: Array<String>
-    private lateinit var dataUserScore: Array<String>
-    private lateinit var dataReleaseYear: Array<String>
-    private lateinit var dataRuntime: Array<String>
-    private lateinit var dataGenre: Array<String>
-    private var listOfMOvies = arrayListOf<Movie>()*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.lang_setting -> {
-                //
+                // add intent to Language Setting Activity
                 true
             }
             else -> super.onOptionsItemSelected(item)
