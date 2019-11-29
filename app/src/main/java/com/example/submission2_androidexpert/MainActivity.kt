@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         view_pager.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager)
-        tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(applicationContext, R.color.colorMainBackground))
+        tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(applicationContext, R.color.colorPrimaryDark))
 
         /*adapter = MovieAdapter(this)
         lv_list.adapter = adapter

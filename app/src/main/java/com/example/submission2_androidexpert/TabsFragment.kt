@@ -101,7 +101,6 @@ class TabsFragment : Fragment() {
     private fun showRecyclerList(list: ArrayList<MovieOrTvShow>){
         rv.layoutManager = LinearLayoutManager(view?.context)
         val listDataAdapter = RecycleViewDataAdapter(list)
-        listDataAdapter.
         rv.adapter = listDataAdapter
     }
 
