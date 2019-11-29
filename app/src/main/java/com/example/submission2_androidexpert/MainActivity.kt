@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.lang_setting -> {
-                // add intent to Language Setting Activity
+                val intent = Intent(this@MainActivity, LanguangeSettingActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
