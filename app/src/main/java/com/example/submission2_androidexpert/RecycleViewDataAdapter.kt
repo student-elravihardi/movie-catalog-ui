@@ -24,7 +24,7 @@ class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvS
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listMovieOrTvShow[position])
         holder.itemView.setOnClickListener {
-            onItemClickCallback.onItemClicked(listMovieOrTvShow[holder.adapterPosition])
+            onItemClickCallback.onItemClicked(listMovieOrTvShow[position])
         }
     }
 
