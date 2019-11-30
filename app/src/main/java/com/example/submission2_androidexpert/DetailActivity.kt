@@ -27,12 +27,5 @@ class DetailActivity : AppCompatActivity() {
         txt_genre.text = content.genre
         txt_overview.text = content.overview
         content.poster?.let { img_poster.setImageResource(it) }
-
-        /*Glide.with(this.applicationContext)
-            .load(movie.poster)
-            .apply(
-                RequestOptions().override(160, 240)
-            )
-            .into(img_poster)*/
     }
 }
