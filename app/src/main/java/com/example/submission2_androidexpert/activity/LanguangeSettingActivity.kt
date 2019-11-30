@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert.Activity
+package com.example.submission2_androidexpert.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

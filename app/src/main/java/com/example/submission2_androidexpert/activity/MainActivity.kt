@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert.Activity
+package com.example.submission2_androidexpert.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.submission2_androidexpert.R
-import com.example.submission2_androidexpert.Adapter.SectionsPagerAdapter
+import com.example.submission2_androidexpert.adapter.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -1,10 +1,10 @@
-package com.example.submission2_androidexpert.Adapter
+package com.example.submission2_androidexpert.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.submission2_androidexpert.Model.MovieOrTvShow
+import com.example.submission2_androidexpert.model.MovieOrTvShow
 import com.example.submission2_androidexpert.R
 import kotlinx.android.synthetic.main.item_in_rv.view.*
 

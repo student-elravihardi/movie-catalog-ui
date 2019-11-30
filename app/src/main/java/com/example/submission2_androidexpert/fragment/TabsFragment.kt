@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert.Fragment
+package com.example.submission2_androidexpert.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.submission2_androidexpert.Activity.DetailActivity
-import com.example.submission2_androidexpert.Adapter.RecycleViewDataAdapter
-import com.example.submission2_androidexpert.Model.MovieOrTvShow
+import com.example.submission2_androidexpert.activity.DetailActivity
+import com.example.submission2_androidexpert.adapter.RecycleViewDataAdapter
+import com.example.submission2_androidexpert.model.MovieOrTvShow
 import com.example.submission2_androidexpert.R
 import kotlinx.android.synthetic.main.fragment_tabs.*
 

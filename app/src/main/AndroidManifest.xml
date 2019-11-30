@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.LanguangeSettingActivity"></activity>
+        <activity android:name=".activity.LanguangeSettingActivity"></activity>
         <activity
-            android:name=".Activity.DetailActivity"
-            android:parentActivityName=".Activity.MainActivity">
+            android:name=".activity.DetailActivity"
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.submission2_androidexpert.Activity.MainActivity" />
+                android:value="com.example.submission2_androidexpert.activity.MainActivity" />
         </activity>
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
