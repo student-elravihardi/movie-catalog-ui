@@ -1,191 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorMainBackground"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
     tools:context=".DetailActivity">
 
-    <!--    Customized Toolbar    -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:buttonGravity="center_vertical"/>
+        android:layout_height="wrap_content"
+        android:background="@color/colorMainBackground"
+        android:paddingBottom="16dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RelativeLayout
+        <!--    Customized Toolbar    -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="60dp"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:buttonGravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@+id/txt_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:id="@+id/txt_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorPrimaryDark"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:lineSpacingExtra="6dp"
-                tools:text="How to Train Your Dragon: The Hidden World (2019)"
-                android:textSize="22sp"
-                android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:lineSpacingExtra="6dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="How to Train Your Dragon: The Hidden World (2019)" />
 
-            <FrameLayout
-                android:id="@+id/poster_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_title">
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+        <ImageView
+            android:id="@+id/ic_star"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="@string/star_logo"
+            android:src="@drawable/ic_star_gold_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            app:layout_constraintVertical_bias="0.48" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_star_gold_24dp"
-                        android:layout_marginStart="208dp"
-                        android:layout_marginEnd="6dp"
-                        android:contentDescription="@string/star_logo" />
+        <TextView
+            android:id="@+id/txt_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/ic_star"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            tools:text="77%" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_score"
-                        tools:text="77%"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/txt_runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/txt_score"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title"
+            tools:text="1h 25min" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lbl_separator"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginEnd="12dp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_img"
+            android:layout_width="160dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_runtime"
-                        tools:text="1h 25min"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="24dp"/>
+            <ImageView
+                android:id="@+id/img_poster"
+                android:layout_width="160dp"
+                android:layout_height="240dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/img_poster_desc"
+                android:scaleType="fitXY"
+                tools:src="@color/colorDarkFont" />
 
-                </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="6dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp">
+        <TextView
+            android:id="@+id/lbl_director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/lbl_movie_director"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
-                    <ImageView
-                        android:id="@+id/img_poster"
-                        android:layout_width="160dp"
-                        android:layout_height="240dp"
-                        android:scaleType="fitXY"
-                        android:adjustViewBounds="true"
-                        tools:src="@color/colorDarkFont"
-                        android:contentDescription="@string/img_poster_desc"/>
+        <TextView
+            android:id="@+id/txt_director"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_director"
+            tools:text="Clint Eastwood" />
 
-                </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/lbl_genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/lbl_movie_genre"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toBottomOf="@+id/txt_director" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="100dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginStart="216dp">
+        <TextView
+            android:id="@+id/txt_genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:lineSpacingExtra="6dp"
+            android:maxLines="3"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_genre"
+            tools:text="Action, Animation, Fantasy, Adventure" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lbl_movie_director"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorDarkFont"
-                        android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/lbl_overview"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/lbl_overview"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_img" />
 
-                    <TextView
-                        android:id="@+id/txt_director"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        tools:text="Clint Eastwood"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorDarkFont"/>
+        <TextView
+            android:id="@+id/txt_overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_overview"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@color/colorDarkFont"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_overview"
+            tools:text="Earth is peaceful following the Tournament of Power. Realizing that the universes still hold many more strong people yet to see, Goku spends all his days training to reach even greater heights. Then one day, Goku and Vegeta are faced by a Saiyan called \'Broly\' who they\'ve never seen before. The Saiyans were supposed to have been almost completely wiped out in the destruction of Planet Vegeta, so what\'s this one doing on Earth? This encounter between the three Saiyans who have followed completely different destinies turns into a stupendous battle, with even Frieza (back from Hell) getting caught up in the mix." />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lbl_movie_genre"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorDarkFont"
-                        android:layout_marginBottom="4dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:id="@+id/txt_genre"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        tools:text="Action, Animation, Fantasy, Adventure"
-                        android:lineSpacingExtra="6dp"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorDarkFont"/>
 
-                </LinearLayout>
+</ScrollView>
 
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/lbl_overview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorDarkFont"
-                android:layout_below="@id/poster_container"
-                android:text="@string/lbl_overview"/>
-
-            <TextView
-                android:id="@+id/txt_overview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="16dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorDarkFont"
-                android:lineSpacingExtra="6dp"
-                android:layout_below="@id/lbl_overview"
-                tools:text="Earth is peaceful following the Tournament of Power. Realizing that the universes still hold many more strong people yet to see, Goku spends all his days training to reach even greater heights. Then one day, Goku and Vegeta are faced by a Saiyan called \'Broly\' who they\'ve never seen before. The Saiyans were supposed to have been almost completely wiped out in the destruction of Planet Vegeta, so what\'s this one doing on Earth? This encounter between the three Saiyans who have followed completely different destinies turns into a stupendous battle, with even Frieza (back from Hell) getting caught up in the mix."/>
-
-        </RelativeLayout>
-
-    </ScrollView>
-
-</LinearLayout>

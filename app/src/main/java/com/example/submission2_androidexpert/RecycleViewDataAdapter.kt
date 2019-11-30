@@ -8,6 +8,12 @@ import kotlinx.android.synthetic.main.item_in_rv.view.*
 
 class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvShow>): RecyclerView.Adapter<RecycleViewDataAdapter.ListViewHolder>() {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_in_rv, parent, false)
         return ListViewHolder(view)
@@ -17,6 +23,9 @@ class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvS
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         holder.bind(listMovieOrTvShow[position])
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listMovieOrTvShow[holder.adapterPosition])
+        }
     }
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,5 +36,9 @@ class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvS
                 data.poster?.let { img_poster.setImageResource(it) }
             }
         }
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: MovieOrTvShow)
     }
 }

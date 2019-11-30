@@ -1,5 +1,6 @@
 package com.example.submission2_androidexpert
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,7 +24,6 @@ class TabsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tabs, container, false)
     }
 
@@ -43,7 +43,6 @@ class TabsFragment : Fragment() {
                 showRecyclerList(listTvShow)
             }
         }
-
     }
 
     private fun getListMovies(): ArrayList<MovieOrTvShow> {
@@ -101,6 +100,24 @@ class TabsFragment : Fragment() {
     private fun showRecyclerList(list: ArrayList<MovieOrTvShow>){
         rv.layoutManager = LinearLayoutManager(view?.context)
         val listDataAdapter = RecycleViewDataAdapter(list)
+
+        listDataAdapter.setOnItemClickCallback(object : RecycleViewDataAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: MovieOrTvShow) {
+                val parcelableMovie = MovieOrTvShow(
+                    data.poster,
+                    data.title,
+                    data.director,
+                    data.overview,
+                    data.userScore,
+                    data.runtime,
+                    data.genre
+                )
+                val intentToDetailActivity = Intent(view?.context, DetailActivity::class.java)
+                intentToDetailActivity.putExtra(DetailActivity.EXTRA_MOVIE, parcelableMovie)
+                startActivity(intentToDetailActivity)
+            }
+        })
+
         rv.adapter = listDataAdapter
     }
 
