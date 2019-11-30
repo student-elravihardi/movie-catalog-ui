@@ -4,6 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/lang_setting"
         android:icon="@drawable/ic_settings_black_24dp"
-        android:title="@string/lang_setting"
+        android:title="@string/menu_title_lang_setting"
         app:showAsAction="always"/>
 </menu>

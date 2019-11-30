@@ -41,11 +41,11 @@ class TabsFragment : Fragment() {
             if(index == 0){
                 val listMovie = ArrayList<MovieOrTvShow>()
                 listMovie.addAll((getListMovies()))
-                showRecyclerList(listMovie)
+                showRecyclerList(listMovie, 0)
             } else {
                 val listTvShow = ArrayList<MovieOrTvShow>()
                 listTvShow.addAll((getListTvShows()))
-                showRecyclerList(listTvShow)
+                showRecyclerList(listTvShow, 1)
             }
         }
     }
@@ -104,7 +104,8 @@ class TabsFragment : Fragment() {
         return listTvShow
     }
 
-    private fun showRecyclerList(list: ArrayList<MovieOrTvShow>){
+    private fun showRecyclerList(list: ArrayList<MovieOrTvShow>, kindOfContent: Int){
+        // kindOfContent adalah parameter yang digunakan apakah konten adalah movie atau tv show
         rv.layoutManager = LinearLayoutManager(view?.context)
         val listDataAdapter = RecycleViewDataAdapter(list)
 
@@ -122,6 +123,7 @@ class TabsFragment : Fragment() {
                     )
                 val intentToDetailActivity = Intent(view?.context, DetailActivity::class.java)
                 intentToDetailActivity.putExtra(DetailActivity.EXTRA_MOVIE, parcelableMovie)
+                intentToDetailActivity.putExtra(DetailActivity.EXTRA_KIND_OF_CONTENT, kindOfContent)
                 startActivity(intentToDetailActivity)
             }
         })

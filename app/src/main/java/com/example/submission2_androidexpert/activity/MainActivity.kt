@@ -2,6 +2,7 @@ package com.example.submission2_androidexpert.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -41,8 +42,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.lang_setting -> {
-                val intent = Intent(this@MainActivity, LanguangeSettingActivity::class.java)
-                startActivity(intent)
+                val mIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(mIntent)
                 true
             }
             else -> super.onOptionsItemSelected(item)

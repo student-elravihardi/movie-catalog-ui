@@ -59,7 +59,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="24dp"
-            android:contentDescription="@string/star_logo"
+            android:contentDescription="@string/star_logo_desc"
             android:src="@drawable/ic_star_gold_24dp"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/card_img"
@@ -79,16 +79,29 @@
             tools:text="77%" />
 
         <TextView
-            android:id="@+id/txt_runtime"
+            android:id="@+id/lbl_separator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/lbl_separator"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/txt_score"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+        <TextView
+            android:id="@+id/txt_runtime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="20dp"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/txt_score"
+            app:layout_constraintStart_toEndOf="@+id/lbl_separator"
             app:layout_constraintTop_toBottomOf="@+id/txt_title"
             tools:text="1h 25min" />
 
@@ -115,7 +128,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/lbl_director"
+            android:id="@+id/lbl_director_or_creator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -141,7 +154,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/card_img"
-            app:layout_constraintTop_toBottomOf="@+id/lbl_director"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_director_or_creator"
             tools:text="Clint Eastwood" />
 
         <TextView

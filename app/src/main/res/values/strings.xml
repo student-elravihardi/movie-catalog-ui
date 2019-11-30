@@ -1,20 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Movie Catalog</string>
+    <string name="app_name">Movie &amp; Tv Show Catalog</string>
     <string name="tab_text_movies">Movies</string>
     <string name="tab_text_tvshows">Tv Shows</string>
-    <string name="content_tab_text">This is Fragment </string>
-
-    <string name="movie_title">Movie Title</string>
-    <string name="movie_overview">Movie Overview</string>
 
     <string name="img_poster_desc">This is poster of the movie or tv show</string>
+    <string name="star_logo_desc">This is star icon</string>
     <string name="lbl_movie_director">Director</string>
+    <string name="lbl_tvshow_creator">Creator</string>
     <string name="lbl_movie_genre">Genre</string>
-
     <string name="lbl_overview">Overview</string>
     <string name="lbl_separator">|</string>
-    <string name="star_logo">star logo</string>
-    <string name="lang_setting">Languange Setting</string>
+    <string name="menu_title_lang_setting">Languange Setting</string>
 
     <!--     Data Movies    -->
 
