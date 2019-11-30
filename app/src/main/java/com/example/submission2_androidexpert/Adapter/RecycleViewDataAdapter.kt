@@ -1,9 +1,11 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.submission2_androidexpert.Model.MovieOrTvShow
+import com.example.submission2_androidexpert.R
 import kotlinx.android.synthetic.main.item_in_rv.view.*
 
 class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvShow>): RecyclerView.Adapter<RecycleViewDataAdapter.ListViewHolder>() {
@@ -16,7 +18,9 @@ class RecycleViewDataAdapter(private val listMovieOrTvShow: ArrayList<MovieOrTvS
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_in_rv, parent, false)
-        return ListViewHolder(view)
+        return ListViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int = listMovieOrTvShow.size

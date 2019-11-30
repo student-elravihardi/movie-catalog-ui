@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.submission2_androidexpert.R
+import com.example.submission2_androidexpert.Adapter.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,10 +20,16 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = null
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val sectionsPagerAdapter =
+            SectionsPagerAdapter(
+                this,
+                supportFragmentManager
+            )
         view_pager.adapter = sectionsPagerAdapter
         tabs.setupWithViewPager(view_pager)
-        tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(applicationContext, R.color.colorPrimaryDark))
+        tabs.setSelectedTabIndicatorColor(ContextCompat.getColor(applicationContext,
+            R.color.colorPrimaryDark
+        ))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

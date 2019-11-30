@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.submission2_androidexpert.Activity.DetailActivity
+import com.example.submission2_androidexpert.Adapter.RecycleViewDataAdapter
+import com.example.submission2_androidexpert.Model.MovieOrTvShow
+import com.example.submission2_androidexpert.R
 import kotlinx.android.synthetic.main.fragment_tabs.*
 
 class TabsFragment : Fragment() {
@@ -15,7 +19,8 @@ class TabsFragment : Fragment() {
         private const val ARG_SECTION_NUMBER = "section_number"
 
         fun newInstance(index: Int): TabsFragment {
-            val fragment = TabsFragment()
+            val fragment =
+                TabsFragment()
             val bundle = Bundle()
             bundle.putInt(ARG_SECTION_NUMBER, index)
             fragment.arguments = bundle
@@ -56,15 +61,16 @@ class TabsFragment : Fragment() {
 
         val listMovie = ArrayList<MovieOrTvShow>()
         for (pos in dataTitle.indices) {
-            val movie = MovieOrTvShow(
-                dataPoster.getResourceId(pos, -1),
-                dataTitle[pos],
-                dataDirector[pos],
-                dataOverview[pos],
-                dataUserScore[pos],
-                dataRuntime[pos],
-                dataGenre[pos]
-            )
+            val movie =
+                MovieOrTvShow(
+                    dataPoster.getResourceId(pos, -1),
+                    dataTitle[pos],
+                    dataDirector[pos],
+                    dataOverview[pos],
+                    dataUserScore[pos],
+                    dataRuntime[pos],
+                    dataGenre[pos]
+                )
             listMovie.add(movie)
         }
         dataPoster.recycle()
@@ -82,15 +88,16 @@ class TabsFragment : Fragment() {
 
         val listTvShow = ArrayList<MovieOrTvShow>()
         for (pos in dataTitle.indices) {
-            val tvShow = MovieOrTvShow(
-                dataPoster.getResourceId(pos, -1),
-                dataTitle[pos],
-                dataDirector[pos],
-                dataOverview[pos],
-                dataUserScore[pos],
-                dataRuntime[pos],
-                dataGenre[pos]
-            )
+            val tvShow =
+                MovieOrTvShow(
+                    dataPoster.getResourceId(pos, -1),
+                    dataTitle[pos],
+                    dataDirector[pos],
+                    dataOverview[pos],
+                    dataUserScore[pos],
+                    dataRuntime[pos],
+                    dataGenre[pos]
+                )
             listTvShow.add(tvShow)
         }
         dataPoster.recycle()
@@ -99,19 +106,23 @@ class TabsFragment : Fragment() {
 
     private fun showRecyclerList(list: ArrayList<MovieOrTvShow>){
         rv.layoutManager = LinearLayoutManager(view?.context)
-        val listDataAdapter = RecycleViewDataAdapter(list)
+        val listDataAdapter =
+            RecycleViewDataAdapter(
+                list
+            )
 
         listDataAdapter.setOnItemClickCallback(object : RecycleViewDataAdapter.OnItemClickCallback{
             override fun onItemClicked(data: MovieOrTvShow) {
-                val parcelableMovie = MovieOrTvShow(
-                    data.poster,
-                    data.title,
-                    data.director,
-                    data.overview,
-                    data.userScore,
-                    data.runtime,
-                    data.genre
-                )
+                val parcelableMovie =
+                    MovieOrTvShow(
+                        data.poster,
+                        data.title,
+                        data.director,
+                        data.overview,
+                        data.userScore,
+                        data.runtime,
+                        data.genre
+                    )
                 val intentToDetailActivity = Intent(view?.context, DetailActivity::class.java)
                 intentToDetailActivity.putExtra(DetailActivity.EXTRA_MOVIE, parcelableMovie)
                 startActivity(intentToDetailActivity)

@@ -1,10 +1,12 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Adapter
 
 import android.content.Context
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.submission2_androidexpert.R
+import com.example.submission2_androidexpert.Fragment.TabsFragment
 
 class SectionsPagerAdapter (private val mContext: Context, fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
@@ -15,7 +17,9 @@ class SectionsPagerAdapter (private val mContext: Context, fm: FragmentManager) 
     )
 
     override fun getItem(position: Int): Fragment {
-        return TabsFragment.newInstance(position)
+        return TabsFragment.newInstance(
+            position
+        )
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

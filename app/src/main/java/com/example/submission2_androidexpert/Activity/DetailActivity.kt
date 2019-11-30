@@ -1,7 +1,9 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.submission2_androidexpert.Model.MovieOrTvShow
+import com.example.submission2_androidexpert.R
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {

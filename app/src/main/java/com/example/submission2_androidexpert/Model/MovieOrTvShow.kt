@@ -1,4 +1,4 @@
-package com.example.submission2_androidexpert
+package com.example.submission2_androidexpert.Model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
